@@ -1,0 +1,10 @@
+.container__flex--col {
+  display: flex;
+  flex-flow: column;
+}
+
+.container__flex--row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}

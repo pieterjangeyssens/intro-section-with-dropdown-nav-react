@@ -12,7 +12,49 @@
 
 body {
   font-family: "Epilogue", sans-serif;
+  background-color: var(--almost-white);
 }
 
 a {
+  text-decoration: none;
+}
+
+.hero__text {
+  order: 2;
+  margin: 2.5rem 0.8rem 0;
+
+  & p,
+  & h1 {
+    text-align: center;
+  }
+
+  & h1 {
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 0.75rem;
+  }
+
+  & p {
+    font-weight: 500;
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+}
+
+.hero__image {
+  order: 1;
+}
+
+aside {
+  margin-top: 3rem;
+
+  & img {
+    width: 100%;
+    max-height: 36px;
+    aspect-ratio: auto;
+  }
+}
+
+.logo-audiophile {
+  width: 70%;
 }
