@@ -1,4 +1,5 @@
 import "./App.scss";
+import { useState, useEffect } from "react";
 import Button from "./components/Button";
 import logoDatabiz from "./images/client-databiz.svg";
 import logoAudiophile from "./images/client-audiophile.svg";
@@ -9,9 +10,32 @@ import heroImageMobile from "./images/image-hero-mobile.png";
 import Header from "./components/Header";
 
 function App() {
+  const [navToggle, setNavToggle] = useState(false);
+
+  const navToggler = () => {
+    setNavToggle((prev) => !prev);
+  };
+
+  useEffect(() => {
+    navToggle
+      ? document.body.classList.add("lock-scrollbar")
+      : document.body.classList.remove("lock-scrollbar");
+  });
+
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 375);
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 375);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return window.removeEventListener("resize", updateMedia);
+  });
+
   return (
     <div className="App">
-      <Header></Header>
+      <Header navToggle={navToggle} setNavToggle={navToggler} />
       <main className="container__flex--col">
         <div className="container__flex--col hero__text">
           <h1>Make remote work</h1>
@@ -33,10 +57,11 @@ function App() {
         </div>
         <img
           className="hero__image"
-          src={window.innerWidth > 375 ? heroImageDesktop : heroImageMobile}
+          src={isDesktop ? heroImageDesktop : heroImageMobile}
           alt="Hero"
         />
       </main>
+      {navToggle ? <div className="nav__toggle__overlay"></div> : ""}
     </div>
   );
 }

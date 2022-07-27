@@ -2,9 +2,68 @@
 
 nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: absolute;
   right: 0;
   top: 0;
+  width: 65vw;
+  height: 100vh;
+  background-color: var(--almost-white);
   transform: translateX(100%);
+  z-index: 20;
+}
+
+.nav--active {
+  transform: translateX(0%);
+}
+
+.nav__toggle__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--almost-black);
+  opacity: 0.8;
+  z-index: 5;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0 0 1.5rem;
+  gap: 1rem;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__item__link {
+  color: var(--medium-gray);
+}
+
+.nav__btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.nav__btn a {
+  color: var(--medium-gray);
+  font-size: 0.9rem;
+}
+
+.nav__btn--register {
+  border: var(--medium-gray) solid 2px;
+  border-radius: 15px;
+  padding: 0.75rem 4rem;
+}
+
+.nav__btn--active {
+  color: red;
 }

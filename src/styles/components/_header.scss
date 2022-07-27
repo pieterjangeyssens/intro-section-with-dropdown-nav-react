@@ -1,11 +1,12 @@
 header {
   display: flex;
   justify-content: space-between;
-  margin: 1.5rem 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .menu__icon {
   background: none;
   border: none;
   align-self: flex-start;
+  z-index: 30;
 }

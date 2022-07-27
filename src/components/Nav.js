@@ -1,29 +1,69 @@
 import React from "react";
+import NavFold from "../components/NavFold";
+import NavButton from "../components/NavButton";
+import iconCalendar from "../images/icon-calendar.svg";
+import iconPlanning from "../images/icon-planning.svg";
+import iconReminder from "../images/icon-reminders.svg";
+import iconTodo from "../images/icon-todo.svg";
 
-const Nav = () => {
+const Nav = (props) => {
+  const navContent = [
+    {
+      name: "Features",
+      children: [
+        {
+          name: "Todo List",
+          icon: iconTodo,
+        },
+        {
+          name: "Calendar",
+          icon: iconCalendar,
+        },
+        {
+          name: "Reminders",
+          icon: iconReminder,
+        },
+        {
+          name: "Planning",
+          icon: iconPlanning,
+        },
+      ],
+    },
+    {
+      name: "Company",
+      children: [
+        {
+          name: "History",
+        },
+        {
+          name: "Our Team",
+        },
+        {
+          name: "Blog",
+        },
+      ],
+    },
+  ];
+
   return (
-    <nav>
-      <ul>
+    <nav className={props.navToggle ? "nav--active" : ""}>
+      <ul className="nav__list">
+        <NavFold desc={"Features"} />
+        <NavFold desc={"Company"} />
         <li>
-          <a href="#features">Features</a>
+          <a className="nav__item__link" href="#careers">
+            Careers
+          </a>
         </li>
         <li>
-          <a href="#company">Company</a>
-        </li>
-        <li>
-          <a href="#careers">Careers</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
+          <a className="nav__item__link" href="#about">
+            About
+          </a>
         </li>
       </ul>
-      <ul>
-        <li>
-          <a href="#login">Login</a>
-        </li>
-        <li>
-          <a href="#register">Register</a>
-        </li>
+      <ul className="nav__btns">
+        <NavButton name={"Login"} />
+        <NavButton name={"Register"} />
       </ul>
     </nav>
   );

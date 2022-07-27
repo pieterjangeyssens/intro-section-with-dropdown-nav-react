@@ -1,18 +1,18 @@
-import React from "react";
 import Nav from "./Nav";
 import logo from "../images/logo.svg";
 import iconMenu from "../images/icon-menu.svg";
+import iconCloseMenu from "../images/icon-close-menu.svg";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <a href="#top">
         <img src={logo} alt="logo" />
       </a>
-      <button className="menu__icon">
-        <img src={iconMenu} alt="Menu icon" />
+      <button className="menu__icon" onClick={props.setNavToggle}>
+        <img src={props.navToggle ? iconCloseMenu : iconMenu} alt="Menu icon" />
       </button>
-      <Nav></Nav>
+      <Nav navToggle={props.navToggle} />
     </header>
   );
 };

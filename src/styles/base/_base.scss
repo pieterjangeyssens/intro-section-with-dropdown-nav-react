@@ -13,6 +13,7 @@
 body {
   font-family: "Epilogue", sans-serif;
   background-color: var(--almost-white);
+  overflow-x: hidden;
 }
 
 a {
@@ -21,7 +22,7 @@ a {
 
 .hero__text {
   order: 2;
-  margin: 2.5rem 0.8rem 0;
+  margin: 2.5rem 0.8rem 4rem;
 
   & p,
   & h1 {
@@ -46,7 +47,7 @@ a {
 }
 
 aside {
-  margin-top: 3rem;
+  margin: 3rem 0;
 
   & img {
     width: 100%;
