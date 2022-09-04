@@ -12,7 +12,7 @@ const Header = (props) => {
       <button className="menu__icon" onClick={props.setNavToggle}>
         <img src={props.navToggle ? iconCloseMenu : iconMenu} alt="Menu icon" />
       </button>
-      <Nav navToggle={props.navToggle} />
+      <Nav navToggle={props.navToggle} isDesktop={props.isDesktop} />
     </header>
   );
 };

@@ -1,10 +1,38 @@
-.container__flex--col {
+@use "../abstracts/mixins" as *;
+
+.container__flex {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+
+  @include respond-to("desktop-up") {
+    flex-direction: row;
+    align-content: flex-end;
+    gap: 4em;
+    margin-bottom: 6em;
+  }
+}
+
+.container__flex__text {
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to("desktop-up") {
+    flex-basis: 55%;
+  }
+}
+
+.container__flex__img {
+  order: 1;
+  margin: 0 auto;
+
+  @include respond-to("desktop-up") {
+    margin: 3em min(10%, 6em) 0 0;
+    flex-basis: 45%;
+  }
 }
 
 .container__flex--row {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5em;
 }

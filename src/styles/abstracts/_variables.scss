@@ -1,5 +1,17 @@
 $breakpoints: (
+  "tablet-portrait-up": (
+    min-width: 31.25rem,
+  ),
+  "tablet-landscape-up": (
+    min-width: 46.875rem,
+  ),
   "desktop-up": (
-    min-height: 23.4rem,
+    min-width: 62.5rem,
+  ),
+  "title-vp": (
+    min-width: 67.5rem,
+  ),
+  "large": (
+    min-width: 78.75rem,
   ),
 );

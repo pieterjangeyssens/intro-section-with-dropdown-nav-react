@@ -46,10 +46,16 @@ const Nav = (props) => {
   ];
 
   return (
-    <nav className={props.navToggle ? "nav--active" : ""}>
+    <nav className={props.navToggle && !props.isDesktop ? "nav--active" : ""}>
       <ul className="nav__list">
-        <NavFold desc={"Features"} />
-        <NavFold desc={"Company"} />
+        <NavFold
+          desc={"Features"}
+          content={navContent.find((content) => content.name === "Features")}
+        />
+        <NavFold
+          desc={"Company"}
+          content={navContent.find((content) => content.name === "Company")}
+        />
         <li>
           <a className="nav__item__link" href="#careers">
             Careers

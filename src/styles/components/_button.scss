@@ -1,13 +1,21 @@
+@use "../abstracts/mixins" as *;
+
 .hero__btn {
   border: 1px solid var(--almost-black);
   border-radius: 15px;
   background-color: var(--almost-black);
   color: var(--almost-white);
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
+  margin-top: 1.5em;
+  padding: 0.75em 1.5em;
   align-self: center;
   cursor: pointer;
+
+  @include respond-to("desktop-up") {
+    align-self: flex-start;
+    margin: 3em 0 6em;
+  }
 }
 
 .hero__btn--active {

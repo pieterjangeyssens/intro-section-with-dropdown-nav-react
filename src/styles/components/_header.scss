@@ -1,7 +1,13 @@
+@use "../abstracts/mixins" as *;
+
 header {
   display: flex;
+  padding: 1.3em 1em;
   justify-content: space-between;
-  padding: 1.5rem 1rem;
+
+  @include respond-to("desktop-up") {
+    padding: 2em 2em;
+  }
 }
 
 .menu__icon {
@@ -9,4 +15,8 @@ header {
   border: none;
   align-self: flex-start;
   z-index: 30;
+
+  @include respond-to("desktop-up") {
+    display: none;
+  }
 }
